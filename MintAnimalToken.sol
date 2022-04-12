@@ -7,6 +7,7 @@ import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol";
 contract MintAnimalToken is ERC721Enumerable{
     constructor() ERC721("IANAnimals", "IAN"){}
 
+    mapping(uint256 => string) private animal;
     mapping(uint256 => uint256) public animalTypes;
     // mapping이란?
     // 매핑은 일반적인 프로그래밍 언어에서는 해시테이블이나 사전과 유사합니다.
@@ -25,4 +26,5 @@ contract MintAnimalToken is ERC721Enumerable{
         animalTypes[animalTokenId] = animalType;
         _mint(msg.sender, animalTokenId);
     }
+
 }
