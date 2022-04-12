@@ -25,6 +25,6 @@ contract MintAnimalToken is ERC721Enumerable{
         //랜덤값을 매핑에 집어넣기
         animalTypes[animalTokenId] = animalType;
         _mint(msg.sender, animalTokenId);
-    }
+    }   
 
 }
