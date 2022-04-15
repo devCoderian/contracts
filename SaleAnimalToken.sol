@@ -67,7 +67,6 @@ contract SaleAnimalToken{
 
         //프론트엔드에서 사용할 판매중인 토큰의 길이를 출력하는 함수 view처리
         //프론트에서 이 함수를 이용해 판매중인리스트를 가져오기위해 onSaleAnimalTokenArray를 for문을 돌린다.
-
         function getOnSaleAnimalTokenArrayLength() view public returns(uint256){
             return onSaleAnimalTokenArray.length;
         }
