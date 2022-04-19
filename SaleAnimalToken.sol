@@ -19,6 +19,8 @@ contract SaleAnimalToken {
     //프론트엔드에서 어떤게 판매중인 토큰인지 알 수 있도록 배열 생성   
     uint256[] public onSaleAnimalTokenArray;
 
+    
+
     function setForSaleAnimalToken(uint256 _animalTokenId, uint256 _price) public { //다 참조할 수 있게끔 퍼블릭 처리
         address animalTokenOwner = mintAnimalTokenAddress.ownerOf(_animalTokenId); //토큰 아이디 값으로 주인 주소 식별
 
@@ -49,7 +51,6 @@ contract SaleAnimalToken {
         // token owner address = tokenId owner 뽑아오기
         address animalTokenOnwer = mintAnimalTokenAddress.ownerOf(_animalTokenId);
 
-        
         require(price > 0, "Animal token not sale."); //
         require(price <= msg.value, "Caller sent lower than price."); //
         require(animalTokenOnwer != msg.sender, "Caller is animal token owner.");
@@ -74,4 +75,5 @@ contract SaleAnimalToken {
     function getAnimalTokenPrice(uint256 _animalTokenId) view public returns (uint256) {
         return animalTokenPrices[_animalTokenId];
     }
+
 }

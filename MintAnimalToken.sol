@@ -41,9 +41,10 @@ contract MintAnimalToken is ERC721Enumerable {
         _mint(msg.sender, animalTokenId);
     }
 
-    //리팩토링 함수 => 재 deploy
-    //리턴 타입 memory 명시(storage => 영구 저장, memory => 임시)
-    function getAnimalTokens(address _animalTokenOwner) view public returns (AnimalTokenData[] memory) {
+    // 리팩토링 함수 => 재 deploy
+    // 리턴 타입 memory 명시(storage => 영구 저장, memory => 임시)
+
+        function getAnimalTokens(address _animalTokenOwner) view public returns (AnimalTokenData[] memory) {
         
         //소유갯수 체크
         uint256 balanceLength = balanceOf(_animalTokenOwner);
